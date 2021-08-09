@@ -47,10 +47,17 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginBottom="5dp"
                     tools:listitem="@layout/category_item_swipe"
-
                     />
 
             </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:layout_margin="10dp"
+                android:id="@+id/ads_image"
+                />
+
 
 
 

@@ -6,7 +6,8 @@
     android:gravity="center"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="5dp"
-    android:layout_marginLeft="12dp">
+    android:layout_marginLeft="12dp"
+    android:id="@+id/cat_ll">
 
     <ImageView
         android:layout_width="50dp"

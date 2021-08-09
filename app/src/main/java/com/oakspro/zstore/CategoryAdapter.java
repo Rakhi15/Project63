@@ -1,10 +1,12 @@
 package com.oakspro.zstore;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,6 +45,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.catName.setText(member.getCat_name());
         Picasso.get().load(img_url_dir+member.getCat_img()).into(holder.catImg);
 
+
+        holder.catLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, ProductlistActivity.class);
+                intent.putExtra("cat_id", member.getCat_id());
+                intent.putExtra("cat_name", member.getCat_name());
+                context.startActivity(intent);
+            }
+        });
+
+
+
     }
 
     @Override
@@ -55,12 +70,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         ImageView catImg;
         TextView catName;
+        LinearLayout catLL;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
             catImg=itemView.findViewById(R.id.cat_img);
             catName=itemView.findViewById(R.id.cat_name_tx);
+            catLL=itemView.findViewById(R.id.cat_ll);
 
 
         }

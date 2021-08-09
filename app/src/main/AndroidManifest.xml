@@ -14,8 +14,12 @@
         android:theme="@style/Theme.ZStore"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ProductlistActivity"
+            android:exported="true" />
+        <activity
             android:name=".DashActivity"
-            android:label="@string/title_activity_dash" android:theme="@style/Theme.ZStoreNew"></activity>
+            android:label="@string/title_activity_dash"
+            android:theme="@style/Theme.ZStoreNew" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".SigninActivity" />
         <activity android:name=".MainActivity">

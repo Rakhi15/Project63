@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import com.oakspro.zstore.CategoryAdapter;
 import com.oakspro.zstore.CategoryMember;
 import com.oakspro.zstore.R;
 import com.oakspro.zstore.databinding.FragmentHomeBinding;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +41,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     RecyclerView recyclerView;
+    ImageView adsImage;
     private String api_categ="https://oakspro.com/projects/project35/deepu/zstore/category_api.php";
     ArrayList<CategoryMember> arrayList=new ArrayList<>();
 
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         recyclerView=root.findViewById(R.id.recyler_cat);
+        adsImage=root.findViewById(R.id.ads_image);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         getCategoryServer(getActivity().getPackageName());
 
@@ -68,6 +72,7 @@ public class HomeFragment extends Fragment {
                 try {
                     JSONObject jsonObject=new JSONObject(response);
                     String status=jsonObject.getString("status");
+                    String ads_img=jsonObject.getString("ads_image");
                     if (status.equals("1")){
 
                         JSONArray jsonArray=jsonObject.getJSONArray("categories");
@@ -85,6 +90,7 @@ public class HomeFragment extends Fragment {
                         }
                         adapter=new CategoryAdapter(getContext(), arrayList);
                         recyclerView.setAdapter(adapter);
+                        Picasso.get().load("https://oakspro.com/projects/project35/deepu/zstore/Ads/"+ads_img).into(adsImage);
 
 
                     }else {
