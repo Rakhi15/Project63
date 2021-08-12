@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user1/AndroidStudioProjects/ZStore/app/src/main/res/layout/activity_dash.xml" value="0.25" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/ZStore/app/src/main/res/layout/activity_product_details.xml" value="0.2" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/ZStore/app/src/main/res/layout/activity_productlist.xml" value="0.264" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/ZStore/app/src/main/res/layout/category_item_swipe.xml" value="0.24259259259259258" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/ZStore/app/src/main/res/layout/fragment_home.xml" value="0.24259259259259258" />
